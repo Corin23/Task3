@@ -1,0 +1,13 @@
+1. create image: 
+qemu-img create -f qcow2 <imagename>.img 40GB
+
+2. run the vm:
+
+qemu-system-x86_64 -enable-kvm -cdrom <iso file path> -boot menu=on -drive file=<imagename>.img -m <RAM memory> -cpu host -smp 2(cores)
+
+-vga virtio -display sdl,gl=on - 3d graphic acceleration
+
+
+qemu-system-x86_64 -enable-kvm -boot menu=on -drive file=Fedora36.img -m 2G -cpu host -smp 2 -vga virtio -display sdl,gl=on ---- after install
+
+psswd = corin123
